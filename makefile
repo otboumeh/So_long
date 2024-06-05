@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/06/03 16:25:10 by otboumeh          #+#    #+#              #
+#    Updated: 2024/06/04 15:22:43 by otboumeh         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #Comandos
 DEL			=	rm -f
 CC			=	gcc 
@@ -8,24 +20,25 @@ MLX			=	-lXext -lX11 -lm -lbsd
 NAME		=	so_long
 
 #Ficheros
-SRC_FILES	= main 
+SRC_FILES	= main mlx_fonctions
 	
 
 SRC			=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ			=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
+GNL			=   src/GNL
 LIBFT		=	src/libft
 MINILIBX	= 	mlx
 
 #Librerias 
-LIBS		= $(MINILIBX)/libmlx.a $(MLX) $(LIBFT)/libft.a 
+LIBS		= $(MINILIBX)/libmlx.a $(MLX) $(LIBFT)/libft.a $(GNL)/gnl.a
 
 #Directorios
 SRC_DIR = src/
 OBJ_DIR = objs/
 
 # REGLAS # 
-all:	minilibx libft $(NAME)
+all:	minilibx libft GNL $(NAME)
 
 #Compilar 
 $(NAME):$(OBJ)
@@ -53,6 +66,11 @@ minilibx:
 	@$(MAKE) -C ./$(MINILIBX)
 	@echo "$(GREEN)MINILIBX HAS BEEN COMPILED$(NC)"
 
+GNL:
+	@echo "$(YELLOW)COMPILING GNL...$(NC)"
+	@$(MAKE) -C ./$(GNL)
+	@echo "$(GREEN)GNL HAS BEEN COMPILED$(NC)"
+
 # Eliminar tmp mlx
 fclean_mlx:
 	@make fclean -C ./$(MINILIBX)
@@ -63,6 +81,11 @@ fclean_mlx:
 fclean_libft:
 	@make fclean -C ./$(LIBFT)
 	@echo "$(RED)LIBFT FULL CLEANED!$(NC)"
+
+
+fclean_GNL:
+	@make fclean -C ./$(GNL)
+	@echo "$(RED)GNL FULL CLEANED!$(NC)"
 
 # Eliminar temporales
 clean:
