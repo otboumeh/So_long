@@ -6,7 +6,7 @@
 /*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:16:19 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/06/04 15:30:44 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/06/05 17:46:42 by otboumeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,22 @@
 #include <X11/keysym.h>
 #include <fcntl.h>
 
-
-typedef struct s_mlx_data
+typedef struct s_map
 {
-    void	*mlx_ptr;
-    void	*win_ptr;
-}               t_mlx_data;
+    char    *path;
+}               t_map;
 
-int close_window(t_mlx_data *data);
-int	handle_input(int keysym, t_mlx_data *data);
+typedef struct s_game
+{
+    void	*mlx;
+    void	*mlx_win;
+    t_map   map;
+
+}               t_game;
+
+
+int close_window(t_game *data);
+int	handle_input(int keysym, t_game *data);
 
 
 

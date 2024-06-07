@@ -6,7 +6,7 @@
 /*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:20:14 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/06/04 17:01:02 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/06/05 13:38:38 by otboumeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main(void)
 {
-    t_mlx_data data;
+    t_game data;
     void *img;
     int img_width = 10;
     int img_height = 30;
@@ -29,10 +29,10 @@ int main(void)
     char buf;
     int x = 0, y = 0;
 
-    data.mlx_ptr = mlx_init();
-    data.win_ptr = mlx_new_window(data.mlx_ptr, 2600, 800, "My Window");
+    data.mlx = mlx_init();
+    data.mlx_win = mlx_new_window(data.mlx, 2600, 800, "My Window");
 
-    img = mlx_xpm_file_to_image(data.mlx_ptr, player, &img_width, &img_height);
+    img = mlx_xpm_file_to_image(data.mlx, player, &img_width, &img_height);
 
     if (img == NULL) {
         perror("Failed to load image\n");
@@ -46,7 +46,7 @@ int main(void)
 
     while (read(fd, &buf, 1) > 0) {
         if (buf == 'P') {
-            mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, img, 0, 0);
+            mlx_put_image_to_window(data.mlx, data.mlx_win, img, 0, 0);
         }
 
         if (buf == '\n') {
@@ -59,10 +59,10 @@ int main(void)
 
     close(fd);
 
-    mlx_key_hook(data.win_ptr, handle_input, &data);
-    mlx_hook(data.win_ptr, 17, 0, close_window, &data);
+    mlx_key_hook(data.mlx_win, handle_input, &data);
+    mlx_hook(data.mlx_win, 17, 0, close_window, &data);
 
-    mlx_loop(data.mlx_ptr);
+    mlx_loop(data.mlx);
 
     return 0;
 }
