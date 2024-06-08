@@ -6,12 +6,14 @@
 /*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 11:59:46 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/06/05 16:09:04 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:40:34 by otboumeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "solong.h"
+
 void	ft_error(char *message)
 {
-	printf("%s", message);
+	ft_printf("%s", message);
 	exit(1);
 }
