@@ -6,7 +6,7 @@
 #    By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/03 16:25:10 by otboumeh          #+#    #+#              #
-#    Updated: 2024/06/07 15:21:46 by otboumeh         ###   ########.fr        #
+#    Updated: 2024/06/10 17:01:46 by otboumeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ all:	minilibx libft $(NAME)
 #Compilar 
 $(NAME):$(OBJ)
 		$(CC) $(OBJ) $(LIBS) -o $(NAME)
-		@echo "$(GREEN)SO_LONG HAS BEEN COMPILED!$(NC)"
+	
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
