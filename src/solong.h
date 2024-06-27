@@ -6,7 +6,7 @@
 /*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:16:19 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/06/10 17:08:33 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/06/11 12:47:45 by otboumeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ typedef struct s_game
     void	*mlx;
     void	*mlx_win;
     t_map   map;
-
 }               t_game;
 
 
@@ -45,7 +44,8 @@ int close_window(t_game *data);
 int	handle_input(int keysym, t_game *data);
 void	check_extension(char *argv1, t_game *game);
 void	get_len(t_game *game);
-
+void	check_arg_number(int argc);
+void    save_map(t_game *game);
 
 
 #endif
