@@ -6,7 +6,7 @@
 /*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:20:14 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/06 17:24:55 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/07 16:14:55 by otboumeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ int main(int argc, char **argv)
     check_perimeters(&game);
     count_thing(&game);
     game.mlx = mlx_init();
-    game.mlx_win = mlx_new_window(game.mlx, game.map.x * 64, game.map.y * 64, "So_long");
+    game.mlx_win = mlx_new_window(game.mlx, game.map.x * 100, game.map.y * 100, "So_long");
     hooks(&game);
+    charg_img(&game);
     mlx_loop(game.mlx);
-
 }
 
 /* int main(void)

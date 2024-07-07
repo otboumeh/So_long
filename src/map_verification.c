@@ -6,7 +6,7 @@
 /*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:48:01 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/06 17:24:50 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/07 16:47:03 by otboumeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	get_len(t_game *game)
 		line = get_next_line(fd);
 		free(temp);
 	}
-	if (game->map.x == game->map.y)
-		ft_error("map is not rectangle");
+	/* if (game->map.x == game->map.y)
+		ft_error("map is not rectangle"); */
 	close(fd);
 }

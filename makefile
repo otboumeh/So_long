@@ -6,7 +6,7 @@
 #    By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/03 16:25:10 by otboumeh          #+#    #+#              #
-#    Updated: 2024/07/03 09:39:33 by otboumeh         ###   ########.fr        #
+#    Updated: 2024/07/07 15:46:44 by otboumeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ MLX			=	-lXext -lX11 -lm -lbsd
 NAME		=	so_long
 
 #Ficheros
-SRC_FILES	= main mlx_fonctions error map_verification read_map
+SRC_FILES	= main mlx_fonctions error map_verification read_map charging_img put_imgs
 	
 
 SRC			=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))

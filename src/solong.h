@@ -6,7 +6,7 @@
 /*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:16:19 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/06 16:57:14 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/07 16:09:28 by otboumeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@
 #include "libft/libft.h"
 #include "libft/get_next_line.h"
 #include "libft/ft_printf.h"
+#define WALL "texture/wall.xpm"
+#define PLAYER "texture/player.xpm"
+#define FLOOR "texture/floor.xpm"
+#define DOOR "texture/door.xpm"
+#define COIN "texture/coin.xpm"
 
 
 typedef struct s_map
@@ -38,6 +43,14 @@ typedef struct s_map
     int     coin;
 }               t_player;
  
+typedef struct s_image
+{
+    void   *player; 
+    void    *floor;
+    void    *coin;
+    void    *exit;
+    void    *wall;
+}               t_image;
 
 typedef struct s_game
 {
@@ -45,11 +58,8 @@ typedef struct s_game
     void	    *mlx_win;
     t_map       map;
     t_player    player; 
+    t_image     image;
 }               t_game;
-
-
-
-
 
 int     close_window(t_game *data);
 int	    handle_input(int keysym, t_game *game);
@@ -57,11 +67,18 @@ void	check_extension(char *argv1, t_game *game);
 void	get_len(t_game *game);
 void	check_arg_number(int argc);
 void    save_map(t_game *game);
- void    read_map(t_game *game);
+void    read_map(t_game *game);
 void    check_perimeters(t_game *game); 
 void	ft_error(char *message);
 void    count_thing(t_game *game);
 void    check_caracs(t_game *game,int x, int y); 
-
+static	void charge_xpm(t_game *game);
+static	void	put_img(t_game *game,int x, int y);
+void	put_floor(t_game *game, int x, int y);
+void	put_player(t_game *game, int x, int y);
+void	put_door(t_game *game, int x, int y);
+void	put_wall(t_game *game, int x, int y);
+void	put_coin(t_game *game, int x, int y);
+void	charg_img(t_game *game);
 
 #endif
