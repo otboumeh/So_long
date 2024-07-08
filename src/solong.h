@@ -6,7 +6,7 @@
 /*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:16:19 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/07 16:09:28 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/08 15:41:03 by otboumeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
+#include <stdbool.h>
 #include "../mlx/mlx.h"
 #include <X11/keysym.h>
 #include <fcntl.h>
@@ -41,6 +42,10 @@ typedef struct s_map
  typedef struct s_player
 {
     int     coin;
+    int     x;
+    int     y;
+    int     flous;
+    bool    exit;
 }               t_player;
  
 typedef struct s_image
@@ -49,7 +54,7 @@ typedef struct s_image
     void    *floor;
     void    *coin;
     void    *exit;
-    void    *wall;
+    void    *wall; 
 }               t_image;
 
 typedef struct s_game
@@ -80,5 +85,10 @@ void	put_door(t_game *game, int x, int y);
 void	put_wall(t_game *game, int x, int y);
 void	put_coin(t_game *game, int x, int y);
 void	charg_img(t_game *game);
+void	player_initial_position(t_game *game);
+void	verification_recursivity(t_game *game, int y, int x);
+void	verification(t_game *game);
+void	verification_of_playalibtly(t_game *game);
+void    ft_free(t_game *game);
 
 #endif
