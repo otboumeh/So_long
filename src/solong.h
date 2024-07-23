@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solong.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tshiki <tshiki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:16:19 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/08 15:41:03 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:26:40 by tshiki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,16 @@
 #define FLOOR "texture/floor.xpm"
 #define DOOR "texture/door.xpm"
 #define COIN "texture/coin.xpm"
+# define Q XK_q
+# define W XK_w
+# define A XK_a
+# define S XK_s
+# define D XK_d
+# define ESC XK_Escape
+# define KEY_LEFT XK_Left
+# define KEY_RIGHT XK_Right
+# define KEY_DOWN XK_Down
+# define KEY_UP XK_Up
 
 
 typedef struct s_map
@@ -46,6 +56,8 @@ typedef struct s_map
     int     y;
     int     flous;
     bool    exit;
+    int			moves;
+
 }               t_player;
  
 typedef struct s_image
@@ -54,7 +66,7 @@ typedef struct s_image
     void    *floor;
     void    *coin;
     void    *exit;
-    void    *wall; 
+    void    *wall;
 }               t_image;
 
 typedef struct s_game
@@ -66,8 +78,7 @@ typedef struct s_game
     t_image     image;
 }               t_game;
 
-int     close_window(t_game *data);
-int	    handle_input(int keysym, t_game *game);
+int	destroy_window(t_game *game);
 void	check_extension(char *argv1, t_game *game);
 void	get_len(t_game *game);
 void	check_arg_number(int argc);
@@ -90,5 +101,14 @@ void	verification_recursivity(t_game *game, int y, int x);
 void	verification(t_game *game);
 void	verification_of_playalibtly(t_game *game);
 void    ft_free(t_game *game);
+int    handler_keys(int keycode, t_game *game);
+void	move(t_game *game, int my, int mx);
+void	check_collects(t_game *game, int my, int mx);
+int	handler_keys(int keycode, t_game *game);
+void	check_0(t_game *game, int my, int mx);
+
+
+
+
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tshiki <tshiki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:46:47 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/06 17:24:52 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:32:05 by tshiki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
     
     fd = open(game->map.path, O_RDONLY);
     if (fd < 0)
-        ft_error("probleme to open the map");
+        ft_error("\n probleme to open the map \n");
     game->map.map = (char **)malloc(sizeof(char *) * (game->map.y +1)); 
     if (!(game->map.map))
-        ft_error("erreur de alocation de memoire");
+        ft_error("\nerreur de alocation de memoire\n");
     line = get_next_line(fd);
     if (!line)
-        ft_error("line is empty");
+        ft_error("\n line is empty \n");
     i = 0;
     while (i < game->map.y)
     {
@@ -47,12 +47,12 @@
     while (x--)
     {
         if (game->map.map[0][x]!= '1' || game->map.map[y - 1][x] != '1')
-            ft_error("map is not closed");
+            ft_error("\nmap is not closed\n");
     }
     while (y--)
     {
         if (game->map.map[y][0] != '1' || game->map.map[y][game ->map.x - 1] != '1')
-            ft_error("map is not closed");
+            ft_error("\nmap is not closed\n");
     }
 } 
  void check_caracs(t_game *game,int x, int y)

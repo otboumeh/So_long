@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   charging_img.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tshiki <tshiki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 15:11:48 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/07 16:10:02 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:26:14 by tshiki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 static	void	charge_xpm(t_game *game)
 {
-	int	x;
+	int	x; 
 	int	y;
-	
 	game->image.coin = mlx_xpm_file_to_image(game->mlx,COIN,&(x),&(y));
 	game->image.player = mlx_xpm_file_to_image(game->mlx,PLAYER,&(x),&(y));
 	game->image.wall = mlx_xpm_file_to_image(game->mlx,WALL,&(x),&(y));
 	game->image.exit = mlx_xpm_file_to_image(game->mlx,DOOR,&(x),&(y));
 	game->image.floor = mlx_xpm_file_to_image(game->mlx,FLOOR,&(x),&(y));
+
 }
 static	void	put_img(t_game *game,int x, int y)
 {
@@ -37,6 +37,8 @@ static	void	put_img(t_game *game,int x, int y)
 		put_door(game, x, y);
 	else if (now == 'C')
 		put_coin(game, x, y);
+ 	else if(now == 'D')
+		put_player(game, x, y);
 }
 void	charg_img(t_game *game)
 {

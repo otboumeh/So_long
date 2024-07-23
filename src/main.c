@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tshiki <tshiki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:20:14 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/08 16:00:18 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/23 14:44:28 by tshiki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 
 void	hooks(t_game *game)
 {
-	mlx_hook(game->mlx_win, 17, 1, close_window, game);
-	/* mlx_hook(game->mlx_win, 2, 1, keysym, game); */
+	mlx_hook(game->mlx_win, 17, 1, destroy_window, game);
+    
+
+	mlx_hook(game->mlx_win, 2, 1, handler_keys, game); 
 }
 
 int main(int argc, char **argv)
@@ -39,4 +41,5 @@ int main(int argc, char **argv)
     hooks(&game);
     charg_img(&game);
     mlx_loop(game.mlx);
+    return (0);
 }

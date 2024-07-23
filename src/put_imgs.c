@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_imgs.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tshiki <tshiki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 15:39:00 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/07 16:13:28 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:26:48 by tshiki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,4 @@ void	put_player(t_game *game, int x, int y)
 {
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.player, (x * 100), (y * 100));
 }
+

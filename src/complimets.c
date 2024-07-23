@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   complimets.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tshiki <tshiki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:42:56 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/08 15:54:01 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/23 11:47:53 by tshiki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,14 @@ void	player_initial_position(t_game *game)
 		}
 		y++;
 	}
+}
+int	destroy_window(t_game *game)
+{
+	mlx_destroy_window(game->mlx, game->mlx_win);
+	mlx_destroy_image(game->mlx, game->image.exit);
+	mlx_destroy_image(game->mlx, game->image.coin);
+	mlx_destroy_image(game->mlx, game->image.floor);
+	mlx_destroy_image(game->mlx, game->image.player);
+	ft_free(game);
+	exit(EXIT_SUCCESS);
 }

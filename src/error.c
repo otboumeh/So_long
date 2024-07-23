@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tshiki <tshiki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 11:59:46 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/08 15:40:41 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:31:00 by tshiki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_error(char *message)
 void	check_arg_number(int argc)
 {
 	if (argc != 2)
-		ft_error("Invalid arguments number");
+		ft_error("\n Invalid arguments number\n");
 }
 void	ft_free(t_game *game)
 {
@@ -36,7 +36,7 @@ void	verification_of_playalibtly(t_game *game)
 {
 	if (game->player.coin != game->player.flous || game->player.exit == false)
 	{
-		ft_error("map is unplayable");
+		ft_error("\n map is unplayable \n");
 	}
 	ft_free(game);
 }
