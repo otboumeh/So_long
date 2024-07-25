@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keys.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/25 09:46:57 by otboumeh          #+#    #+#             */
+/*   Updated: 2024/07/25 10:12:57 by otboumeh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "solong.h"
 
@@ -56,7 +67,7 @@ void	move(t_game *game, int my, int mx)
 }
 
 int	handler_keys(int keycode, t_game *game)
-{		
+{
 	if (game->player.moves == 0)
 		game->player.moves++;
 	if (keycode == Q || keycode == ESC)

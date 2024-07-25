@@ -6,7 +6,7 @@
 /*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 12:54:30 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/06/10 11:55:24 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/25 10:25:18 by otboumeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,10 @@ char	*create_line(char *deposit)
 	line[i] = '\0';
 	return (line);
 }
-/* Using deposit[fd] allows get_next_line to maintain separate reading states for multiple file 
-descriptors, enabling concurrent reading from multiple files without data collision or loss.
- This approach makes the function robust and versatile in handling various file I/O scenarios.
- */
+
 char	*get_next_line(int fd)
 {
-	static char	*deposit[4096]; // Static array to store leftover data for each file descriptor
+	static char	*deposit[4096];
 	char		buffer[BUFFER_SIZE +1];
 	int			readbytes;
 	char		*line;

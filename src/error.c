@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshiki <tshiki@student.42.fr>              +#+  +:+       +#+        */
+/*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 11:59:46 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/23 15:31:00 by tshiki           ###   ########.fr       */
+/*   Updated: 2024/07/25 09:46:36 by otboumeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ void	ft_error(char *message)
 	ft_printf("%s", message);
 	exit(1);
 }
+
 void	check_arg_number(int argc)
 {
 	if (argc != 2)
 		ft_error("\n Invalid arguments number\n");
 }
+
 void	ft_free(t_game *game)
 {
 	int	y;
@@ -32,6 +34,7 @@ void	ft_free(t_game *game)
 	free(game->map.map);
 	game->map.map = NULL;
 }
+
 void	verification_of_playalibtly(t_game *game)
 {
 	if (game->player.coin != game->player.flous || game->player.exit == false)

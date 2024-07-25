@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   complimets.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshiki <tshiki@student.42.fr>              +#+  +:+       +#+        */
+/*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:42:56 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/07/23 11:47:53 by tshiki           ###   ########.fr       */
+/*   Updated: 2024/07/25 09:45:54 by otboumeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	player_initial_position(t_game *game)
 {
-	int x;
+	int	x;
 	int	y;
 
 	y = 0;
@@ -34,6 +34,7 @@ void	player_initial_position(t_game *game)
 		y++;
 	}
 }
+
 int	destroy_window(t_game *game)
 {
 	mlx_destroy_window(game->mlx, game->mlx_win);

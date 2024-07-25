@@ -6,7 +6,7 @@
 /*   By: otboumeh <otboumeh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:57:16 by otboumeh          #+#    #+#             */
-/*   Updated: 2024/05/04 16:58:49 by otboumeh         ###   ########.fr       */
+/*   Updated: 2024/07/25 10:20:27 by otboumeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ int	putnbr_pos(unsigned int n, int count);
 //put_hex.c
 
 int	puthexnbr(size_t n, int count, char x_type);
-
 
 #endif
