@@ -45,7 +45,7 @@ The **So Long** project is a game inspired by the classic Super Mario style. The
 
 1. Compile the program:
    ```bash
-   gcc -Wall -Wextra -Werror -o so_long so_long.c
+   make
 2. Run the game:
    ```bash
    ./so_long map.ber
